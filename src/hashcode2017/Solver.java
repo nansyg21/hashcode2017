@@ -20,8 +20,20 @@ public class Solver {
 	
 	public void Solve()
 	{
-		
-		
+		int cacheId = 0 , vidCounter = 0;
+
+		for(Cache c : caches)
+		{
+		    // cache can fit another video
+			if(c.getSize() < videos.get(vidCounter).getSize()) {
+				System.out.println(c.getId());
+				c.setSize(c.getSize()-videos.get(vidCounter).getSize());
+                videos.remove(vidCounter);
+			}
+			else {
+			    break;
+            }
+		}
 		
 	}
 
