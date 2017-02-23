@@ -26,7 +26,7 @@ public class Cache {
 		return size;
 	}
 
-	public void setSize(double size) {
+	public void setSize(int size) {
 		this.size = size;
 	}
     

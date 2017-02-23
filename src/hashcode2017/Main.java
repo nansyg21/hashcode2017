@@ -39,7 +39,7 @@ public class Main {
 		//Initialize video
 		for(int i=0;i<howManyVids;i++)
 		{
-			Double db=Double.parseDouble(splitVideoSizesLine[i]);
+			int db=Integer.parseInt(splitVideoSizesLine[i]);
 			Video v=new Video(i,db);
 			videos.add(v);
 		}
@@ -62,10 +62,11 @@ public class Main {
 			System.out.println(ip.fileLines.get(i)+" -line: "+i);
 			
 		}*/
-		//Solver solver = new Solver()
+		Solver solver = new Solver(videos,InputParser.requests,caches,InputParser.endpoints);
+        solver.Solve();
 
-		op.Write("newOutput.txt", ip.fileLines);
-		op.Append("newOutput.txt", "append");
+		//op.Write("newOutput.txt", ip.fileLines);
+		//op.Append("newOutput.txt", "append");
 	}
 	
 
