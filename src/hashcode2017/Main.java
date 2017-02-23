@@ -24,8 +24,8 @@ public class Main {
 			System.out.println(ip.fileLines.get(i)+" -line: "+i);
 			
 		}*/
-		op.Write("newOutput.txt", ip.fileLines);
-		op.Append("newOutput.txt", "append");
+	//	op.Write("newOutput.txt", ip.fileLines);
+	//	op.Append("newOutput.txt", "append");
 	}
 	
 
