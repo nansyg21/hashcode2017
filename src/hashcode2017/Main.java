@@ -13,7 +13,7 @@ public class Main {
 		OutputParser op=new OutputParser();
 		
 		
-		ip.readFile("kittens.in");
+		ip.readFile("me_at_the_zoo.txt");
 		System.out.print("first "+ip.firstLine +"\n");
 
 		String[] splitLine=ip.videoLine.split("\\s+");
