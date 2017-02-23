@@ -12,6 +12,7 @@ public class Main {
 		InputParser ip=new InputParser();
 		OutputParser op=new OutputParser();
 		
+		
 		ip.readFile("kittens.in");
 		System.out.print("first "+ip.firstLine +"\n");
 
