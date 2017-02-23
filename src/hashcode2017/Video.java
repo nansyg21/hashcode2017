@@ -5,7 +5,7 @@ public class Video {
 	int id;
 	int size;
 	
-	public Video(int id, Double size) {
+	public Video(int id, int size) {
 		super();
 		this.id = id;
 		this.size = size;
@@ -15,7 +15,7 @@ public class Video {
 		return id;
 	}
 
-	public Double getSize() {
+	public int getSize() {
 		return size;
 	}
 }
