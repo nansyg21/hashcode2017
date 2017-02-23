@@ -1,5 +1,7 @@
 package hashcode2017;
 
+import java.util.ArrayList;
+
 public class Main {
 
 	/**
@@ -18,6 +20,9 @@ public class Main {
 		
 		ip.firstLineSplit(ip.firstLine);
 		int howManyVids=Integer.parseInt(ip.firstLineSplit[0]);
+		
+		ArrayList<Video> videos=new ArrayList<Video>();
+		
 		System.out.println("Vids "+howManyVids);
 		int howManyEndpoints=Integer.parseInt(ip.firstLineSplit[1]);
 		System.out.println("End points "+howManyEndpoints);
@@ -27,8 +32,12 @@ public class Main {
 		System.out.println("Caches "+howManyCaches);
 		int capacityPerCache=Integer.parseInt(ip.firstLineSplit[4]);
 		System.out.println("Capacity "+howManyVids);
+				
+		String[] splitVideoSizesLine=ip.videoLine.split("\\s+");
 		
-		String[] splitLine=ip.videoLine.split("\\s+");
+		
+		
+		
 		//int howManyVids=splitLine.length;
 		
 		//System.out.print("second line length "+splitLine.length +"\n");

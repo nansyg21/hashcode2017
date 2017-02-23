@@ -27,6 +27,7 @@ public class InputParser {
             s = new Scanner(new BufferedReader(new FileReader(fileName)));
 
             //Read next line
+            int counter=0;
             while (s.hasNextLine()) {
                 String line = s.nextLine().trim();
 
@@ -38,7 +39,7 @@ public class InputParser {
                 }
                 
                 //Store first line in a different variable
-                if (first) {
+                else if (first) {
                     firstLine = line;
                     first = false;
                     second=true;
@@ -46,6 +47,32 @@ public class InputParser {
                 
                 //Keep the rest line in an arraylist
                 else {
+                	
+                	String[] splitLine=line.split("\\s+");
+                	if(splitLine.length==2)
+                	{
+                		
+                		int dcLatency=Integer.parseInt(splitLine[0]);
+                		int howManyCache=Integer.parseInt(splitLine[1]);
+                		
+                		for(int i=0;i<howManyCache;i++)
+                		{
+                			String line2 = s.nextLine().trim();
+                			String[] splitLine2=line2.split("\\s+");
+                			//Refer to the end point we 
+                			int cachePointId=Integer.parseInt(splitLine2[0]);
+                			int epLatency=Integer.parseInt(splitLine2[1]);
+                		}
+                		counter++; //counter is end point id
+                		
+                		
+                	}
+                	else if(splitLine.length==3)
+                	{
+                		int vidId=Integer.parseInt(splitLine[0]);
+                		int endPointId=Integer.parseInt(splitLine[0]);
+                		int requests=Integer.parseInt(splitLine[0]);
+                	}
                     fileLines.add(line);
                 }
             }
