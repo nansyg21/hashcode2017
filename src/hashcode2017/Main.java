@@ -2,6 +2,10 @@ package hashcode2017;
 
 public class Main {
 
+	/**
+	 * Impossible to guess functionality
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 			
