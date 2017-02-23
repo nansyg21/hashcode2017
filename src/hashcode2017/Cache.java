@@ -7,9 +7,11 @@ public class Cache {
 
 
     int id;
+    int size;
 
-    public Cache(int id) {
+    public Cache(int id, int size) {
         this.id = id;
+        this.size = id;
     }
 
     public int getId() {
@@ -19,4 +21,13 @@ public class Cache {
     public void setId(int id) {
         this.id = id;
     }
+
+	public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+    
 }

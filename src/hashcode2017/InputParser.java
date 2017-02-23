@@ -11,12 +11,17 @@ public class InputParser {
     public static String[] videoLineSplit;
     public static ArrayList<String> fileLines;
     public static ArrayList<String[]> fileLinesSplit;
+    public static ArrayList<Request> requests;
+    public static ArrayList<EndPoint> endpoints;
 
     private Scanner s;
 
     public InputParser() {
         fileLines = new ArrayList<String>();
         fileLinesSplit = new ArrayList<String[]>();
+        requests=new ArrayList<Request>();
+        endpoints=new ArrayList<EndPoint>();
+       
     }
 
     //Read a file of strings
@@ -41,6 +46,11 @@ public class InputParser {
                 //Store first line in a different variable
                 else if (first) {
                     firstLine = line;
+                    //firstLineSplit(firstLine);
+                    //int howManyVids=Integer.parseInt(ip.firstLineSplit[0]);
+                    //ArrayList<Video> videos=new ArrayList<Video>();
+                    
+                    
                     first = false;
                     second=true;
                 }
@@ -55,6 +65,8 @@ public class InputParser {
                 		int dcLatency=Integer.parseInt(splitLine[0]);
                 		int howManyCache=Integer.parseInt(splitLine[1]);
                 		
+                		EndPoint ep=new EndPoint(counter,dcLatency);
+                		
                 		for(int i=0;i<howManyCache;i++)
                 		{
                 			String line2 = s.nextLine().trim();
@@ -62,6 +74,11 @@ public class InputParser {
                 			//Refer to the end point we 
                 			int cachePointId=Integer.parseInt(splitLine2[0]);
                 			int epLatency=Integer.parseInt(splitLine2[1]);
+                			
+                			ep.caches[i]=cachePointId;
+                			ep.latencies[i]=epLatency;
+                			
+                			endpoints.add(ep);
                 		}
                 		counter++; //counter is end point id
                 		
@@ -71,7 +88,10 @@ public class InputParser {
                 	{
                 		int vidId=Integer.parseInt(splitLine[0]);
                 		int endPointId=Integer.parseInt(splitLine[0]);
-                		int requests=Integer.parseInt(splitLine[0]);
+                		int requestCount=Integer.parseInt(splitLine[0]);
+                		
+                		Request rq=new Request(vidId,endPointId,requestCount);
+                		requests.add(rq);
                 	}
                     fileLines.add(line);
                 }

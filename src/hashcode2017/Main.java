@@ -22,6 +22,7 @@ public class Main {
 		int howManyVids=Integer.parseInt(ip.firstLineSplit[0]);
 		
 		ArrayList<Video> videos=new ArrayList<Video>();
+				
 		
 		System.out.println("Vids "+howManyVids);
 		int howManyEndpoints=Integer.parseInt(ip.firstLineSplit[1]);
@@ -35,7 +36,21 @@ public class Main {
 				
 		String[] splitVideoSizesLine=ip.videoLine.split("\\s+");
 		
+		//Initialize video
+		for(int i=0;i<howManyVids;i++)
+		{
+			Double db=Double.parseDouble(splitVideoSizesLine[i]);
+			Video v=new Video(i,db);
+			videos.add(v);
+		}
 		
+		ArrayList<Cache> caches=new ArrayList<Cache>();
+		
+		for(int i=0;i<howManyCaches;i++)
+		{
+			Cache c=new Cache(i,capacityPerCache);
+			caches.add(c);
+		}
 		
 		
 		//int howManyVids=splitLine.length;

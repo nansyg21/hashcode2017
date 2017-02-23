@@ -5,27 +5,38 @@ package hashcode2017;
  */
 public class Request {
 
-    Video video;
-    EndPoint ed;
+    int video;
+    int ed;
+    int count;
 
-    public Request(Video video, EndPoint ed) {
+    public Request(int video, int ed,int count) {
         this.video = video;
         this.ed = ed;
+        this.count=count;
     }
 
-    public Video getVideo() {
+    public int getVideo() {
         return video;
     }
 
-    public void setVideo(Video video) {
+    public void setVideo(int video) {
         this.video = video;
     }
 
-    public EndPoint getEd() {
+    public int getEd() {
         return ed;
     }
 
-    public void setEd(EndPoint ed) {
+    public void setEd(int ed) {
         this.ed = ed;
     }
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+    
 }
