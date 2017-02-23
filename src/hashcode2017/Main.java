@@ -12,14 +12,17 @@ public class Main {
 		InputParser ip=new InputParser();
 		OutputParser op=new OutputParser();
 		
-		ip.readFile("example(1).in");
-		System.out.print(ip.firstLine +"\n");
+		ip.readFile("kittens.in");
+		System.out.print("first "+ip.firstLine +"\n");
+
+		String[] splitLine=ip.videoLine.split("\\s+");
+		System.out.print("second line length "+splitLine.length +"\n");
 		
-		for(int i=0;i<ip.fileLines.size();i++)
+		/*for(int i=0;i<ip.fileLines.size();i++)
 		{
 			System.out.println(ip.fileLines.get(i)+" -line: "+i);
 			
-		}
+		}*/
 		op.Write("newOutput.txt", ip.fileLines);
 		op.Append("newOutput.txt", "append");
 	}

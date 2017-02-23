@@ -7,6 +7,8 @@ public class InputParser {
 
     public static String firstLine;
     public static String[] firstLineSplit;
+    public static String videoLine;
+    public static String[] videoLineSplit;
     public static ArrayList<String> fileLines;
     public static ArrayList<String[]> fileLinesSplit;
 
@@ -20,6 +22,7 @@ public class InputParser {
     //Read a file of strings
     public void readFile(String fileName) {
         boolean first = true;
+        boolean second=false;
         try {
             s = new Scanner(new BufferedReader(new FileReader(fileName)));
 
@@ -27,11 +30,20 @@ public class InputParser {
             while (s.hasNextLine()) {
                 String line = s.nextLine().trim();
 
+                if(second)
+                {
+                	
+                	videoLine=line;
+                	second=false;
+                }
+                
                 //Store first line in a different variable
                 if (first) {
                     firstLine = line;
                     first = false;
+                    second=true;
                 }
+                
                 //Keep the rest line in an arraylist
                 else {
                     fileLines.add(line);
