@@ -61,20 +61,32 @@ public class InputParser {
         fileLinesSplit.add(curLineSplit);
     }
 
-    public char[][] to2Dchararray() {
-        int n = fileLines.size();
-        int row = 0, column = 0;
-        char[][] grid = new char[n][n];
 
-        for (String[] sArr : fileLinesSplit) {
-            n = sArr.length;
-            for (String s : sArr) {
-                grid[row] [column] = s.charAt(0);
-                row++;
+    /**
+     * Converts fileLinesSplit to a 2D chararray
+     * Easily modified to return Integers or Double values
+     * @return Returns
+     */
+    public char[][] to2Dchararray() {
+
+        if(fileLinesSplit != null && !fileLinesSplit.isEmpty()) {
+            int n = fileLines.size();
+            int row = 0, column = 0;
+            char[][] grid = new char[n][n];
+
+            for (String[] sArr : fileLinesSplit) {
+                n = sArr.length;
+                for (String s : sArr) {
+                    grid[row][column] = s.charAt(0);
+                    row++;
+                }
+                column++;
             }
-            column++;
+            return grid;
+        } else {
+            return null;
         }
-        return grid;
+
     }
 
 }
